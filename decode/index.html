@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lector Codigos QR</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body
+    class="min-h-screen grid justify-items-center items-start gap-8 sm:gap-12 md:gap-16"
+  >
+    <header
+      class="flex justify-between items-center border-b border-secondary w-full h-14 sm:h-16 p-3 sm:p-4"
+    >
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+        Lector de Codigos QR
+      </h1>
+      <nav class="flex gap-2 sm:gap-4 items-center">
+        <a href="/" class="text-sm sm:text-base">Generar Codigo QR</a>
+      </nav>
+    </header>
+
+    <main class="grid gap-4 justify-items-center content-center w-full">
+      <form
+        class="grid gap-4 justify-items-center w-full max-w-md"
+        id="qr-upload-form"
+      >
+        <label
+          for="qr-image"
+          class="flex flex-col sm:flex-row sm:gap-4 gap-2 text-nowrap items-start sm:items-center w-full"
+        >
+          Imagen del Codigo QR
+          <input
+            type="file"
+            id="qr-image"
+            name="qr-image"
+            accept="image/*"
+            class="file-input file-input-primary w-full sm:w-auto"
+          />
+        </label>
+        <fieldset class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full">
+          <button class="btn btn-primary w-full sm:w-auto" type="submit">
+            Leer Codigo
+          </button>
+          <button class="btn btn-primary w-full sm:w-auto" type="reset">
+            Limpiar
+          </button>
+        </fieldset>
+      </form>
+
+      <div class="hidden" id="preview-container">
+        <img
+          id="qr-preview"
+          class="rounded-lg max-w-[200px] sm:max-w-xs w-full aspect-square object-contain"
+          alt="Vista previa del codigo QR"
+        />
+      </div>
+
+      <div class="grid gap-2 justify-items-center">
+        <h2 class="text-xl sm:text-2xl font-bold">Resultado:</h2>
+        <p id="qr-result" class="text-base sm:text-lg"></p>
+      </div>
+    </main>
+    <script type="module" src="/src/decode-main.js"></script>
+  </body>
+</html>

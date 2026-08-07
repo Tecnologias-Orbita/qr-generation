@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="box-border">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador Codigos QR</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body
+    class="min-h-screen grid justify-items-center items-start gap-8 sm:gap-12 md:gap-16"
+  >
+    <header
+      class="flex justify-between items-center border-b border-secondary w-full h-14 sm:h-16 p-3 sm:p-4"
+    >
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+        Generador de Codigos QR
+      </h1>
+      <nav class="flex gap-2 sm:gap-4 items-center">
+        <a href="/decode/" class="text-sm sm:text-base">Leer Codigo QR</a>
+      </nav>
+    </header>
+
+    <main class="grid gap-4 justify-items-center content-center w-full">
+      <form
+        class="grid gap-4 justify-items-center w-full max-w-md"
+        id="new-qr-form"
+      >
+        <label
+          for="text"
+          class="flex flex-col sm:flex-row sm:gap-4 gap-2 text-nowrap items-start sm:items-center w-full"
+        >
+          Texto o URL
+          <input
+            type="text"
+            id="text"
+            name="text"
+            placeholder="Texto o URL a codificar"
+            class="input input-primary w-full sm:w-auto"
+          />
+        </label>
+        <button class="btn btn-primary w-full sm:w-auto" type="submit">
+          Generar
+        </button>
+      </form>
+    </main>
+    <article class="grid gap-4 justify-items-center content-center">
+      <canvas
+        id="qr-canvas"
+        class="rounded-lg w-full max-w-[250px] sm:max-w-[300px] aspect-square"
+        width="300"
+        height="300"
+      ></canvas>
+      <button class="btn btn-primary hidden" id="download-btn">
+        Descargar
+      </button>
+    </article>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

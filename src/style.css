@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  theme: pastel --default;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Canvas responsive: mantener proporción cuadrada y escalar suavemente */
+#qr-canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Asegurar que los inputs de archivo sean accesibles en móvil */
+.file-input {
+  max-width: 100%;
+}
+
+/* Ajustes para el preview de imagen en móvil */
+#qr-preview {
+  max-height: 250px;
+}
