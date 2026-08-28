@@ -1,12 +1,16 @@
 import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import { config } from "dotenv";
+
+config();
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig(() => {
   return {
     //@eslint-disable-next-line
-    base: process.env.NODE_ENV === "production" ? "/qr-generation/" : "/",
+    base:
+      process.env.NODE_ENV === "production" ? `${process.env.BASE_URL}/` : "/",
     plugins: [tailwindcss()],
     input: {
       index: resolve(import.meta.dirname, "index.html"),
