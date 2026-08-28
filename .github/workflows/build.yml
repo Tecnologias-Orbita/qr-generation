@@ -41,6 +41,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
 
       - name: Verify dist folder
         run: |
